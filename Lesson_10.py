@@ -1,3 +1,6 @@
+import pytest
+
+
 def plus(a, b):
     return a + b
 
@@ -7,7 +10,7 @@ def test_01():
 
 
 def test_02():
-    assert plus(100, 9) == 109, "Неверный результат"
+    assert plus(100, 9) == 108, "Неверный результат"
 
 
 def test_03():
