@@ -5,6 +5,9 @@ def my_range(start, end=None):
         yield start
         start += 1
 
-r = my_range(1, 3)
+r = my_range(12, 51)
+a = 0
 for i in r:
-    print(i)
+    a += 1
+    if a == 21:
+        print(i)
