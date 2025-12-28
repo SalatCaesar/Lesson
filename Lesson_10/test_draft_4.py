@@ -1,26 +1,34 @@
-import L_4
+import os
+import tempfile
+from typing import Optional
+
+file_name: Optional[str] = None
+
+
+def setup_function():
+    global file_name
+    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', suffix='.txt', delete=False, dir=os.getcwd()) as tmp:
+        tmp.write('test data')
+        file_name = tmp.name
+
+
+def teardown_function():
+    if os.path.isfile(file_name):
+        os.remove(file_name)
+
 
 def test_read():
-    file_name = L_4.create_file()
-    try:
-        with open(file_name, 'r') as file:
-            assert 'test data' == file.read()
-    finally:
-        L_4.delete_file_after_test(file_name)
+    with open(file_name, 'r') as file:
+        assert 'test data' == file.read()
 
 
 def test_update():
-    file_name = L_4.create_file()
-    try:
-        with open(file_name, 'a') as file:
-            file.write('test2')
-        with open(file_name, 'r') as file:
-            assert 'test2' in file.read()
-    finally:
-        L_4.delete_file_after_test(file_name)
+    with open(file_name, 'a') as file:
+        file.write('test2')
+    with open(file_name, 'r') as file:
+        assert 'test2' in file.read()
 
 
 def test_delete():
-    file_name = L_4.create_file()
-    L_4.os.remove(file_name)
-    assert not L_4.os.path.isfile(file_name)
+    os.remove(file_name)
+    assert not os.path.isfile(file_name)
