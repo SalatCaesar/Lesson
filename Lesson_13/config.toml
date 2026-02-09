@@ -1,0 +1,11 @@
+[GENERAL]
+BROWSER = 'chrome'
+DO_NOT_RESTART = 'True'
+SOFT_RESTART = 'False'
+ELEMENT_OUTPUT_LOG = 'user_friendly'
+
+[CUSTOM]
+SITE_TASK = 'https://fix-online.sbis.ru/page/tasks-in-work'
+USER_LOGIN = 'warehouse_admin'
+USER_PASSWORD = 'warehouse123'
+
