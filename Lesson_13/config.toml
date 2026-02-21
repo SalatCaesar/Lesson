@@ -1,7 +1,7 @@
 [GENERAL]
 BROWSER = 'chrome'
-DO_NOT_RESTART = 'True'
-SOFT_RESTART = 'False'
+DO_NOT_RESTART = true
+SOFT_RESTART = false
 ELEMENT_OUTPUT_LOG = 'user_friendly'
 
 [CUSTOM]
