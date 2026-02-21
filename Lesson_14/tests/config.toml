@@ -1,0 +1,13 @@
+[GENERAL]
+BROWSER = 'chrome'
+DO_NOT_RESTART = true
+SOFT_RESTART = false
+ELEMENT_OUTPUT_LOG = 'user_friendly'
+SITE = 'https://fix-online.sbis.ru/'
+DELAY_ACTION = 0.5
+HIGHLIGHT_ACTION = true
+
+
+[CUSTOM]
+USER_LOGIN = 'Задач_автотест123'
+USER_PASSWORD = 'Задач_автотест1234'
